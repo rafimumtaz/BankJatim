@@ -42,9 +42,6 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <span class="text-2xl font-bold text-[#D2131C]">bank<span class="text-[#A3091B]">jatim</span></span>
-                    <svg class="h-8 w-auto ml-1 text-[#D2131C]" viewBox="0 0 50 30" fill="currentColor">
-                        <path d="M0,30 Q25,0 50,10 T20,20 Z" /> <!-- Abstract wing/leaf shape placeholder -->
-                    </svg>
                 </div>
 
                 <!-- Menu -->
