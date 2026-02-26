@@ -1,36 +1,66 @@
 <x-layouts.landing>
     <div class="relative bg-white overflow-hidden">
-        <!-- Custom Hero Section -->
-        <div class="relative h-[600px] w-full bg-gray-50">
-            <!-- Background Image (Right Side) -->
-            <div class="absolute inset-0">
-                <img class="w-full h-full object-cover object-right" src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Family Shopping">
-                <div class="absolute inset-0 bg-gray-500 mix-blend-multiply opacity-10 lg:hidden"></div>
-            </div>
+        <!-- Custom Hero Section with Carousel -->
+        <div x-data='{
+            activeSlide: 0,
+            slides: @json($slides),
+            next() { this.activeSlide = (this.activeSlide + 1) % this.slides.length },
+            prev() { this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length },
+            timer: null,
+            startAutoPlay() { if(this.slides.length > 1) this.timer = setInterval(() => this.next(), 5000) },
+            stopAutoPlay() { clearInterval(this.timer) }
+        }' x-init="startAutoPlay()" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()"
+           class="relative h-[600px] w-full bg-gray-50">
 
-            <!-- Red Shape (Left Side) -->
-            <div class="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-[#A3091B]" style="clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);">
-                <div class="flex flex-col justify-center h-full px-4 sm:px-6 lg:px-8 max-w-3xl ml-auto lg:mr-20">
-                    <p class="text-sm font-semibold text-white/80 tracking-wide uppercase mb-2">Selamat datang di Bank Jatim</p>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                        Semua Kebutuhan Anda,<br>Dalam Satu Rekening
-                    </h1>
-                    <p class="text-lg text-white/90 mb-8 max-w-lg">
-                        Dari kebutuhan sehari-hari hingga mimpi besar, Bank Jatim selalu hadir membantu mewujudkannya.
-                    </p>
-                    <div>
-                        <a href="#" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-[#A3091B] bg-white hover:bg-gray-100 md:py-4 md:text-lg shadow-lg transition duration-150 ease-in-out">
-                            Pelajari Lebih Lanjut
-                        </a>
+            <!-- Loop through slides -->
+            <template x-for="(slide, index) in slides" :key="slide.id">
+                <div x-show="activeSlide === index"
+                     x-transition:enter="transition ease-out duration-700"
+                     x-transition:enter-start="opacity-0"
+                     x-transition:enter-end="opacity-100"
+                     x-transition:leave="transition ease-in duration-700"
+                     x-transition:leave-start="opacity-100"
+                     x-transition:leave-end="opacity-0"
+                     class="absolute inset-0 w-full h-full">
+
+                    <!-- Background Image (Right Side) -->
+                    <div class="absolute inset-0">
+                        <img class="w-full h-full object-cover object-right" :src="'/storage/' + slide.image_path" :alt="slide.title">
+                        <div class="absolute inset-0 bg-gray-500 mix-blend-multiply opacity-10 lg:hidden"></div>
                     </div>
 
-                    <!-- Pagination Dots -->
-                    <div class="flex space-x-2 mt-12">
-                        <span class="block w-8 h-2 bg-white rounded-full"></span>
-                        <span class="block w-2 h-2 bg-white/50 rounded-full"></span>
-                        <span class="block w-2 h-2 bg-white/50 rounded-full"></span>
-                        <span class="block w-2 h-2 bg-white/50 rounded-full"></span>
+                    <!-- Red Shape (Left Side) -->
+                    <div class="absolute inset-y-0 left-0 w-full lg:w-[65%] bg-[#A3091B]" style="clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);">
+                        <div class="flex flex-col justify-center h-full px-4 sm:px-6 lg:px-8 max-w-3xl ml-auto lg:mr-20">
+                            <p class="text-sm font-semibold text-white/80 tracking-wide uppercase mb-2">Selamat datang di Bank Jatim</p>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" x-text="slide.title"></h1>
+                            <p class="text-lg text-white/90 mb-8 max-w-lg" x-text="slide.description"></p>
+                            <div x-show="slide.link_url">
+                                <a :href="slide.link_url" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-[#A3091B] bg-white hover:bg-gray-100 md:py-4 md:text-lg shadow-lg transition duration-150 ease-in-out">
+                                    Pelajari Lebih Lanjut
+                                </a>
+                            </div>
+
+                            <!-- Pagination Dots -->
+                            <div class="flex space-x-2 mt-12 pointer-events-auto">
+                                <template x-for="(s, i) in slides" :key="i">
+                                    <button @click="activeSlide = i"
+                                            type="button"
+                                            class="block h-2 rounded-full transition-all duration-300 focus:outline-none"
+                                            :class="activeSlide === i ? 'w-8 bg-white' : 'w-2 bg-white/50'">
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </template>
+
+             <!-- Fallback if no slides -->
+            <div x-show="slides.length === 0" class="absolute inset-0 flex items-center justify-center bg-gray-100">
+                <div class="text-center">
+                    <p class="text-gray-500 mb-4">No slides configured.</p>
+                    <a href="/admin/carousel-slides/create" class="text-[#A3091B] hover:underline font-semibold">Add Slides in Admin Panel</a>
                 </div>
             </div>
         </div>
