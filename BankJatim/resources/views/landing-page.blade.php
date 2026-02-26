@@ -36,7 +36,7 @@
         </div>
 
         <!-- Floating Cards Section -->
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 z-20 pb-10">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 z-20 pb-10">
             <div class="flex flex-wrap lg:flex-nowrap items-center gap-6">
                 <!-- Buka Tabungan -->
                 <x-dashboard-card>
