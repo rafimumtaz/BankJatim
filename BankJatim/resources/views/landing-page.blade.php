@@ -1,3 +1,4 @@
+<x-layouts.landing>
     <div class="relative bg-white overflow-hidden">
         <!-- Custom Hero Section -->
         <div class="relative h-[600px] w-full bg-gray-50">
@@ -85,3 +86,4 @@
             </div>
         </div>
     </div>
+</x-layouts.landing>
