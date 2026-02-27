@@ -32,6 +32,7 @@ class CarouselSlideResource extends Resource
                             ->image()
                             ->imageEditor()
                             ->required()
+                            ->disk('public')
                             ->directory('carousel-slides')
                             ->visibility('public')
                             ->columnSpanFull(),
