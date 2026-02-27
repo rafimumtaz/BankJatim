@@ -5,11 +5,12 @@ namespace App\Filament\Resources\CarouselSlides;
 use App\Filament\Resources\CarouselSlides\Pages;
 use App\Models\CarouselSlide;
 use Filament\Forms\Components as FormComponents;
-use Filament\Forms\Form;
+use Filament\Schemas\Components as SchemaComponents;
+use Filament\Schemas\Schema;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Actions; // Using Filament\Actions directly
+use Filament\Actions; // Use Filament\Actions for table actions
 use BackedEnum;
 
 class CarouselSlideResource extends Resource
@@ -20,12 +21,12 @@ class CarouselSlideResource extends Resource
 
     protected static ?string $navigationLabel = 'Carousel Slides';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                FormComponents\Section::make()
-                    ->schema([
+        return $schema
+            ->components([
+                SchemaComponents\Section::make()
+                    ->components([
                         FormComponents\FileUpload::make('image_path')
                             ->label('Slide Image')
                             ->image()
@@ -52,8 +53,8 @@ class CarouselSlideResource extends Resource
                             ->rows(3)
                             ->columnSpanFull(),
 
-                        FormComponents\Grid::make(2)
-                            ->schema([
+                        SchemaComponents\Grid::make(2)
+                            ->components([
                                 FormComponents\Toggle::make('is_active')
                                     ->label('Active')
                                     ->default(true)
