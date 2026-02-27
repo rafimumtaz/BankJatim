@@ -76,7 +76,8 @@ class CarouselSlideResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image_path')
                     ->label('Image')
-                    ->square(),
+                    ->square()
+                    ->disk('public'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
