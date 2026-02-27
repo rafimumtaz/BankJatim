@@ -25,7 +25,7 @@
 
                     <!-- Background Image (Right Side) -->
                     <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover object-right" :src="'/storage/' + slide.image_path" :alt="slide.title">
+                        <img class="w-full h-full object-cover object-right" :src="slide.image_url" :alt="slide.title">
                         <div class="absolute inset-0 bg-gray-500 mix-blend-multiply opacity-10 lg:hidden"></div>
                     </div>
 
