@@ -35,6 +35,8 @@ class NewsForm
                 FileUpload::make('image_path')
                     ->image()
                     ->directory('news')
+                    ->disk('public')
+                    ->visibility('public')
                     ->required(),
                 DatePicker::make('published_date')
                     ->required()

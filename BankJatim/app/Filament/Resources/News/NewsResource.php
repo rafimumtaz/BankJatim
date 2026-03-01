@@ -33,7 +33,7 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image_path'),
+                ImageColumn::make('image_path')->disk('public'),
                 TextColumn::make('title')
                     ->searchable()
                     ->limit(30),

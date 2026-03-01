@@ -34,6 +34,8 @@ class PromoForm
                 FileUpload::make('image_path')
                     ->image()
                     ->directory('promos')
+                    ->disk('public')
+                    ->visibility('public')
                     ->required(),
                 TextInput::make('period_text')
                     ->label('Period Text (e.g., "Berlaku hingga 31 Des 2024")')
