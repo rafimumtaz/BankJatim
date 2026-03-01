@@ -132,39 +132,7 @@
             </div>
 
             <!-- Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Promo 1 -->
-                <x-promo-card
-                    image="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    title="Cashback 50% Transaksi QRIS di Merchant Pilihan"
-                    period="Berlaku hingga 31 Des 2024"
-                    tag="QRIS"
-                />
-
-                <!-- Promo 2 -->
-                <x-promo-card
-                    image="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    title="Buka Rekening Online Dapatkan Bonus Saldo Rp 100.000"
-                    period="Berlaku hingga 30 Nov 2024"
-                    tag="JConnect"
-                />
-
-                <!-- Promo 3 -->
-                <x-promo-card
-                    image="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    title="Diskon Belanja Kebutuhan Rumah Tangga dengan Kartu Debit"
-                    period="Berlaku hingga 15 Okt 2024"
-                    tag="Debit"
-                />
-
-                <!-- Promo 4 -->
-                <x-promo-card
-                    image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                    title="Program KPR Bunga Spesial 3.5% Fixed 1 Tahun"
-                    period="Berlaku hingga 31 Des 2024"
-                    tag="KPR"
-                />
-            </div>
+            <livewire:promo-section />
 
             <div class="mt-8 text-center sm:hidden">
                 <a href="#" class="inline-flex items-center text-[#D2131C] font-semibold hover:underline">
@@ -196,69 +164,7 @@
             </div>
 
             <!-- Content Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Large Feature (Left) -->
-                <div class="lg:col-span-5 h-full">
-                    <x-news-card-large
-                        image="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80"
-                        date="23 Feb 2026"
-                        category="Berita"
-                        title="Pengumuman Penerima Hadiah Undian Simpeda Bank Jatim Periode 1 Tahun 2026"
-                        excerpt="Selamat kepada para pemenang undian tabungan Simpeda. Temukan daftar lengkap pemenang dan informasi pengambilan hadiah di sini. Pastikan data diri Anda sesuai dengan identitas yang berlaku."
-                    />
-                </div>
-
-                <!-- Small Grid (Right) -->
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
-                    <!-- News Item 1 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="20 Feb 2026"
-                        category="Info"
-                        title="Informasi Pemeliharaan Sistem Layanan BI-FAST"
-                    />
-
-                    <!-- News Item 2 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="30 Jan 2026"
-                        category="Fitur"
-                        title="Kini Bayar Pajak Kendaraan Bisa dengan Virtual Account"
-                    />
-
-                    <!-- News Item 3 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="29 Jan 2026"
-                        category="Info"
-                        title="Penutupan Layanan Operasional dan Kas Keliling"
-                    />
-
-                    <!-- News Item 4 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="23 Jan 2026"
-                        category="Investasi"
-                        title="Persiapkan Dana Masa Depan dengan ORI029"
-                    />
-
-                    <!-- News Item 5 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="22 Jan 2026"
-                        category="Layanan"
-                        title="Informasi Penutupan Layanan Video Banking"
-                    />
-
-                    <!-- News Item 6 -->
-                    <x-news-card-small
-                        image="https://images.unsplash.com/photo-1556740758-90de2929e507?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
-                        date="20 Jan 2026"
-                        category="Berita"
-                        title="Perubahan Biaya Pembelian/Pembayaran Berkala Produk"
-                    />
-                </div>
-            </div>
+            <livewire:news-section />
 
             <!-- Mobile View All -->
             <div class="mt-8 text-center md:hidden">
