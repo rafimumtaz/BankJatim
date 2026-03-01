@@ -3,7 +3,7 @@
     <div class="lg:col-span-5 h-full">
         @if ($featuredNews)
             <x-news-card-large
-                image="{{ asset('storage/' . $featuredNews->image_path) }}"
+                image="{{ Storage::url($featuredNews->image_path) }}"
                 date="{{ $featuredNews->published_date->format('d M Y') }}"
                 category="{{ $featuredNews->category ? $featuredNews->category->name : 'Berita' }}"
                 title="{{ $featuredNews->title }}"
@@ -20,7 +20,7 @@
     <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
         @forelse ($newsItems as $news)
             <x-news-card-small
-                image="{{ asset('storage/' . $news->image_path) }}"
+                image="{{ Storage::url($news->image_path) }}"
                 date="{{ $news->published_date->format('d M Y') }}"
                 category="{{ $news->category ? $news->category->name : 'Info' }}"
                 title="{{ $news->title }}"
