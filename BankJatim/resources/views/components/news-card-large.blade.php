@@ -17,5 +17,8 @@
         <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">
             {{ $excerpt }}
         </p>
+        <div class="mt-2 text-[#A3091B] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Baca Selengkapnya
+        </div>
     </div>
 </div>
