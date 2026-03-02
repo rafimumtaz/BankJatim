@@ -1,6 +1,6 @@
-@props(['image', 'date', 'category', 'title'])
+@props(['image', 'date', 'category', 'title', 'link' => '#'])
 
-<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer border border-gray-100 flex items-center p-3 gap-4 group h-full">
+<a href="{{ $link }}" class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden cursor-pointer border border-gray-100 flex items-center p-3 gap-4 group h-full block">
     <div class="relative overflow-hidden w-24 h-24 rounded-lg shrink-0 aspect-square">
         <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
     </div>
@@ -17,4 +17,4 @@
             Baca Selengkapnya
         </div>
     </div>
-</div>
+</a>

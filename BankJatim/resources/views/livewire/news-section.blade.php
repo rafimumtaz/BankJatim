@@ -8,6 +8,7 @@
                 category="{{ $featuredNews->category ? $featuredNews->category->name : 'Berita' }}"
                 title="{{ $featuredNews->title }}"
                 excerpt="{{ $featuredNews->excerpt ?? Str::limit(strip_tags($featuredNews->content), 150) }}"
+                link="{{ route('news.show', $featuredNews->slug) }}"
             />
         @else
             <div class="h-full bg-gray-100 rounded-3xl flex items-center justify-center p-8 text-center min-h-[400px]">
@@ -24,6 +25,7 @@
                 date="{{ $news->published_date->format('d M Y') }}"
                 category="{{ $news->category ? $news->category->name : 'Info' }}"
                 title="{{ $news->title }}"
+                link="{{ route('news.show', $news->slug) }}"
             />
         @empty
             <div class="col-span-full text-center text-gray-500 py-8">

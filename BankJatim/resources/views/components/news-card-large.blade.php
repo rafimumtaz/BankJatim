@@ -1,6 +1,6 @@
-@props(['image', 'date', 'category', 'title', 'excerpt'])
+@props(['image', 'date', 'category', 'title', 'excerpt', 'link' => '#'])
 
-<div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full flex flex-col group cursor-pointer border border-gray-100">
+<a href="{{ $link }}" class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full flex flex-col group cursor-pointer border border-gray-100 block">
     <div class="relative overflow-hidden aspect-[16/10]">
         <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -18,4 +18,4 @@
             {{ $excerpt }}
         </p>
     </div>
-</div>
+</a>

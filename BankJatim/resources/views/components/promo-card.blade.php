@@ -1,6 +1,6 @@
-@props(['image', 'title', 'period', 'tag' => 'Promo'])
+@props(['image', 'title', 'period', 'tag' => 'Promo', 'link' => '#'])
 
-<div class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer border border-gray-100 flex flex-col h-full">
+<a href="{{ $link }}" class="group bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer border border-gray-100 flex flex-col h-full block">
     <!-- Image Container -->
     <div class="relative overflow-hidden aspect-[4/3]">
         <img src="{{ $image }}" alt="{{ $title }}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
@@ -23,4 +23,4 @@
             <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </div>
     </div>
-</div>
+</a>
