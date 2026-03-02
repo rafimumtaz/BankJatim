@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\CarouselSlide;
+use App\Http\Controllers\PageController;
 
 // Public Landing Page
 Route::get('/', function () {
@@ -14,4 +15,7 @@ Route::get('/', function () {
         });
 
     return view('landing-page', compact('slides'));
-});
+})->name('home');
+
+Route::get('/news/{slug}', [PageController::class, 'showNews'])->name('news.show');
+Route::get('/promo/{slug}', [PageController::class, 'showPromo'])->name('promo.show');
