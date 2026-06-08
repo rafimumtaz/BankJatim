@@ -41,7 +41,9 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-[#D2131C]">bank<span class="text-[#A3091B]">jatim</span></span>
+                    <a href="/">
+                        <img src="{{ asset('images/logo.png') }}" alt="Bank Jatim" class="h-10">
+                    </a>
                 </div>
 
                 <!-- Menu -->
