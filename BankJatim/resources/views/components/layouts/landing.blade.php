@@ -41,7 +41,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="/">
+                    <a href="http://localhost/BankJatim/BankJatim/public/">
                         <img src="{{ asset('images/logo.png') }}" alt="Bank Jatim" class="h-10">
                     </a>
                 </div>
